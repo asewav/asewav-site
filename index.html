@@ -18,6 +18,7 @@
     <link rel="preconnect" href="https://assets.mlcdn.com">
     <link rel="preconnect" href="https://groot.mailerlite.com">
     <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
   </head>
   <body>
     <header class="site-header" aria-label="Site header">
@@ -26,6 +27,7 @@
       </a>
       <nav class="site-nav" aria-label="Main navigation">
         <a href="#book">Book</a>
+        <a href="#listen">Listen</a>
         <a href="#sample">Free sample</a>
         <a href="#updates">Updates</a>
       </nav>
@@ -71,6 +73,68 @@
         <figure class="cover-preview">
           <img src="assets/bundle-preview.jpg" alt="Modern R&B Chords ebook, MIDI pack, and preview pages">
         </figure>
+      </section>
+
+      <section id="listen" class="section listen-section" aria-labelledby="listen-title">
+        <div class="listen-heading">
+          <div>
+            <p class="eyebrow">Hear the sound</p>
+            <h2 id="listen-title">Chords made for the record.</h2>
+          </div>
+          <p>
+            Press play to hear the kind of color, movement, and late-night feel explored throughout the book.
+          </p>
+        </div>
+
+        <div class="player-list">
+          <article class="audio-player" data-player>
+            <div class="track-number" aria-hidden="true">01</div>
+            <div class="track-main">
+              <div class="track-copy">
+                <div>
+                  <p class="track-label">Audio sample</p>
+                  <h3>Neo-Soul Progression I</h3>
+                </div>
+                <span class="track-duration" data-duration>0:25</span>
+              </div>
+              <div class="waveform" data-waveform aria-hidden="true"></div>
+              <div class="player-controls">
+                <button class="play-button" type="button" data-play aria-label="Play Neo-Soul Progression I">
+                  <span class="play-icon" aria-hidden="true"></span>
+                </button>
+                <span class="time-readout" data-current>0:00</span>
+                <input class="seek-control" data-seek type="range" min="0" max="1000" value="0" aria-label="Seek Neo-Soul Progression I">
+              </div>
+            </div>
+            <audio preload="metadata">
+              <source src="assets/audio/sample-1-neo-soul.wav" type="audio/wav">
+            </audio>
+          </article>
+
+          <article class="audio-player" data-player>
+            <div class="track-number" aria-hidden="true">02</div>
+            <div class="track-main">
+              <div class="track-copy">
+                <div>
+                  <p class="track-label">Audio sample</p>
+                  <h3>Neo-Soul Progression II</h3>
+                </div>
+                <span class="track-duration" data-duration>0:47</span>
+              </div>
+              <div class="waveform" data-waveform aria-hidden="true"></div>
+              <div class="player-controls">
+                <button class="play-button" type="button" data-play aria-label="Play Neo-Soul Progression II">
+                  <span class="play-icon" aria-hidden="true"></span>
+                </button>
+                <span class="time-readout" data-current>0:00</span>
+                <input class="seek-control" data-seek type="range" min="0" max="1000" value="0" aria-label="Seek Neo-Soul Progression II">
+              </div>
+            </div>
+            <audio preload="metadata">
+              <source src="assets/audio/sample-2-neo-soul.wav" type="audio/wav">
+            </audio>
+          </article>
+        </div>
       </section>
 
       <section id="book" class="section split-section" aria-labelledby="inside-title">

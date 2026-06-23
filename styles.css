@@ -24,6 +24,10 @@ html {
   scroll-behavior: smooth;
 }
 
+section[id] {
+  scroll-margin-top: 70px;
+}
+
 body {
   margin: 0;
   background:
@@ -263,6 +267,206 @@ p {
   width: 100%;
 }
 
+.listen-section {
+  background: #0c0c0b;
+  border-bottom: 1px solid rgba(248, 243, 234, 0.1);
+}
+
+.listen-heading {
+  align-items: end;
+  display: grid;
+  gap: clamp(24px, 6vw, 80px);
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.7fr);
+  margin-bottom: clamp(34px, 6vw, 64px);
+}
+
+.listen-heading h2 {
+  margin-bottom: 0;
+  max-width: 10ch;
+}
+
+.listen-heading > p {
+  margin-bottom: 4px;
+  max-width: 560px;
+}
+
+.player-list {
+  border-top: 1px solid rgba(248, 243, 234, 0.16);
+}
+
+.audio-player {
+  align-items: center;
+  border-bottom: 1px solid rgba(248, 243, 234, 0.16);
+  display: grid;
+  gap: clamp(18px, 4vw, 42px);
+  grid-template-columns: 54px minmax(0, 1fr);
+  padding: clamp(24px, 4vw, 38px) 0;
+}
+
+.track-number {
+  color: var(--gold);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.track-main {
+  min-width: 0;
+}
+
+.track-copy {
+  align-items: end;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.track-copy h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.35rem, 3vw, 2.15rem);
+  margin-bottom: 0;
+}
+
+.track-label {
+  color: var(--dim);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.track-duration,
+.time-readout {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.waveform {
+  align-items: center;
+  display: grid;
+  gap: 4px;
+  grid-template-columns: repeat(32, minmax(2px, 1fr));
+  height: 54px;
+  margin: 20px 0 16px;
+  overflow: hidden;
+}
+
+.waveform span {
+  background: rgba(248, 243, 234, 0.22);
+  border-radius: 1px;
+  height: var(--bar-height);
+  min-height: 5px;
+  transition: background 180ms ease;
+}
+
+.audio-player.is-playing .waveform span {
+  animation: pulse-wave 1.25s ease-in-out infinite alternate;
+  background: var(--gold);
+}
+
+.audio-player.is-playing .waveform span:nth-child(3n) {
+  animation-delay: -0.45s;
+}
+
+.audio-player.is-playing .waveform span:nth-child(4n) {
+  animation-delay: -0.8s;
+}
+
+.player-controls {
+  align-items: center;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 44px 42px minmax(0, 1fr);
+}
+
+.play-button {
+  background: var(--gold);
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  display: grid;
+  height: 44px;
+  place-items: center;
+  transition: background 160ms ease, transform 160ms ease;
+  width: 44px;
+}
+
+.play-button:hover {
+  background: var(--gold-soft);
+  transform: scale(1.04);
+}
+
+.play-button:focus-visible {
+  outline: 3px solid rgba(241, 216, 145, 0.45);
+  outline-offset: 3px;
+}
+
+.play-icon {
+  border-bottom: 7px solid transparent;
+  border-left: 11px solid #17110a;
+  border-top: 7px solid transparent;
+  display: block;
+  margin-left: 3px;
+}
+
+.is-playing .play-icon {
+  border: 0;
+  border-left: 4px solid #17110a;
+  border-right: 4px solid #17110a;
+  height: 14px;
+  margin-left: 0;
+  width: 13px;
+}
+
+.time-readout {
+  font-size: 0.83rem;
+}
+
+.seek-control {
+  --progress: 0%;
+  appearance: none;
+  background: linear-gradient(
+    90deg,
+    var(--gold) 0 var(--progress),
+    rgba(248, 243, 234, 0.18) var(--progress) 100%
+  );
+  border-radius: 2px;
+  cursor: pointer;
+  height: 4px;
+  margin: 0;
+  width: 100%;
+}
+
+.seek-control::-webkit-slider-thumb {
+  appearance: none;
+  background: var(--ink);
+  border: 0;
+  border-radius: 50%;
+  height: 14px;
+  width: 14px;
+}
+
+.seek-control::-moz-range-thumb {
+  background: var(--ink);
+  border: 0;
+  border-radius: 50%;
+  height: 14px;
+  width: 14px;
+}
+
+@keyframes pulse-wave {
+  from {
+    opacity: 0.45;
+    transform: scaleY(0.72);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
 .feature-grid {
   display: grid;
   gap: 14px;
@@ -408,6 +612,7 @@ p {
   .hero,
   .split-section,
   .product-preview,
+  .listen-heading,
   .sample-section,
   .updates-section {
     grid-template-columns: 1fr;
@@ -482,5 +687,29 @@ p {
     align-items: flex-start;
     flex-direction: column;
     gap: 10px;
+  }
+
+  .audio-player {
+    gap: 12px;
+    grid-template-columns: 36px minmax(0, 1fr);
+  }
+
+  .waveform {
+    gap: 2px;
+    height: 44px;
+  }
+
+  .track-copy h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .audio-player.is-playing .waveform span {
+    animation: none;
   }
 }
