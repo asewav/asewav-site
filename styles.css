@@ -210,9 +210,10 @@ p {
   border-radius: var(--radius);
   filter: drop-shadow(0 34px 38px rgba(0, 0, 0, 0.52));
   display: block;
+  margin-inline: auto;
   max-width: min(680px, 100%);
   object-fit: contain;
-  width: 100%;
+  width: 85%;
 }
 
 .book-card {
