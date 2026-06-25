@@ -196,6 +196,15 @@ p {
   color: #17110a;
 }
 
+.payhip-buy-button.button-primary {
+  background: var(--gold) !important;
+  border-color: var(--gold) !important;
+  color: #17110a !important;
+  font-family: inherit !important;
+  font-size: inherit !important;
+  font-weight: 800 !important;
+}
+
 .button-secondary {
   background: rgba(248, 243, 234, 0.06);
   border-color: rgba(248, 243, 234, 0.22);
