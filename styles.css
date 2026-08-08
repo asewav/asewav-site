@@ -112,6 +112,7 @@ a {
 .hero-copy,
 .book-visual,
 .section {
+  min-width: 0;
   position: relative;
   z-index: 1;
 }
@@ -134,12 +135,18 @@ p {
 
 h1 {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(3.65rem, 10vw, 9.5rem);
+  font-size: clamp(3.2rem, 6.1vw, 5.65rem);
   font-weight: 800;
   letter-spacing: 0;
   line-height: 0.88;
   margin-bottom: 24px;
-  max-width: 10ch;
+  max-width: 12ch;
+}
+
+h1 span {
+  color: var(--gold-soft);
+  font-style: italic;
+  font-weight: 500;
 }
 
 h2 {
@@ -162,7 +169,14 @@ p {
 }
 
 .hero-lede {
-  font-size: clamp(1.04rem, 2vw, 1.25rem);
+  font-size: clamp(1.02rem, 1.6vw, 1.15rem);
+  max-width: 620px;
+}
+
+.hero-note {
+  color: var(--dim);
+  font-size: 0.96rem;
+  margin-bottom: 0;
   max-width: 620px;
 }
 
@@ -170,7 +184,7 @@ p {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  margin-top: 34px;
+  margin-top: 24px;
 }
 
 .button {
@@ -211,9 +225,10 @@ p {
   filter: drop-shadow(0 34px 38px rgba(0, 0, 0, 0.52));
   display: block;
   margin-inline: auto;
+  max-height: min(70vh, 680px);
   max-width: min(680px, 100%);
   object-fit: contain;
-  width: 85%;
+  width: auto;
 }
 
 .book-card {
@@ -700,13 +715,15 @@ p {
 @media (max-width: 640px) {
   .site-header {
     align-items: flex-start;
+    flex-direction: column;
     gap: 18px;
     position: static;
   }
 
   .site-nav {
     flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    width: 100%;
   }
 
   h1 {
@@ -725,9 +742,11 @@ p {
   }
 
   .hero-product-image {
+    max-height: none;
     min-height: 280px;
     object-fit: cover;
     object-position: 50% center;
+    width: 100%;
   }
 
   .book-card {
