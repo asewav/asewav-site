@@ -11,6 +11,11 @@
   --gold-soft: #f1d891;
   --clay: #a65d3c;
   --sage: #7d9477;
+  --paper: #f8f3ea;
+  --paper-soft: #efe4d2;
+  --paper-ink: #17110a;
+  --paper-muted: #5f5548;
+  --paper-line: rgba(23, 17, 10, 0.14);
   --radius: 8px;
   --shadow: 0 24px 70px rgba(0, 0, 0, 0.36);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -265,10 +270,38 @@ p {
 .product-preview {
   align-items: center;
   background:
-    linear-gradient(180deg, rgba(8, 8, 7, 0.78), rgba(8, 8, 7, 0.92)),
-    radial-gradient(circle at 68% 30%, rgba(139, 59, 128, 0.22), transparent 28rem);
-  border-block: 1px solid rgba(248, 243, 234, 0.1);
+    linear-gradient(135deg, rgba(216, 173, 85, 0.12), transparent 34%),
+    var(--paper);
+  border-block: 1px solid var(--paper-line);
+  color: var(--paper-ink);
   grid-template-columns: minmax(260px, 0.52fr) minmax(600px, 1.48fr);
+}
+
+.split-section {
+  background:
+    linear-gradient(180deg, rgba(255, 250, 241, 0.78), rgba(248, 243, 234, 0.95)),
+    var(--paper);
+  border-block: 1px solid var(--paper-line);
+  color: var(--paper-ink);
+}
+
+.product-preview .eyebrow,
+.split-section .eyebrow,
+.sample-section .eyebrow,
+.buy-section .eyebrow {
+  color: #8a6424;
+}
+
+.product-preview p,
+.split-section p,
+.sample-section p,
+.buy-section p,
+.product-preview .sample-page-grid figcaption {
+  color: var(--paper-muted);
+}
+
+.split-section .feature-grid article h3 {
+  color: var(--paper-ink);
 }
 
 .preview-intro {
@@ -290,10 +323,10 @@ p {
 
 .sample-page-grid img {
   aspect-ratio: 16 / 25;
-  background: #080807;
-  border: 1px solid rgba(248, 243, 234, 0.12);
+  background: #ffffff;
+  border: 1px solid var(--paper-line);
   border-radius: var(--radius);
-  box-shadow: 0 22px 62px rgba(0, 0, 0, 0.44);
+  box-shadow: 0 18px 42px rgba(38, 27, 15, 0.14);
   display: block;
   object-fit: cover;
   width: 100%;
@@ -513,9 +546,10 @@ p {
 }
 
 .feature-grid article {
-  background: rgba(248, 243, 234, 0.055);
-  border: 1px solid rgba(248, 243, 234, 0.1);
+  background: #ffffff;
+  border: 1px solid var(--paper-line);
   border-radius: var(--radius);
+  box-shadow: 0 16px 40px rgba(38, 27, 15, 0.08);
   padding: 22px;
 }
 
@@ -558,8 +592,9 @@ p {
 
 .sample-section {
   background:
-    linear-gradient(90deg, rgba(166, 93, 60, 0.12), transparent),
-    var(--panel);
+    linear-gradient(90deg, rgba(216, 173, 85, 0.18), transparent 58%),
+    var(--paper-soft);
+  color: var(--paper-ink);
 }
 
 .sample-copy p,
@@ -570,9 +605,10 @@ p {
 
 .signup-form {
   align-self: start;
-  background: rgba(8, 8, 7, 0.48);
-  border: 1px solid rgba(248, 243, 234, 0.14);
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid var(--paper-line);
   border-radius: var(--radius);
+  box-shadow: 0 18px 44px rgba(38, 27, 15, 0.12);
   display: grid;
   gap: 16px;
   padding: clamp(20px, 4vw, 32px);
@@ -584,16 +620,16 @@ p {
 }
 
 .signup-form span {
-  color: var(--ink);
+  color: var(--paper-ink);
   font-size: 0.86rem;
   font-weight: 800;
 }
 
 .signup-form input {
-  background: #151514;
-  border: 1px solid rgba(248, 243, 234, 0.38);
+  background: #ffffff;
+  border: 1px solid rgba(23, 17, 10, 0.28);
   border-radius: 6px;
-  color: var(--ink);
+  color: var(--paper-ink);
   font: inherit;
   min-height: 48px;
   padding: 12px 13px;
@@ -610,7 +646,7 @@ p {
 }
 
 .form-note {
-  color: var(--dim);
+  color: var(--paper-muted);
   font-size: 0.82rem;
   line-height: 1.5;
   margin-bottom: 0;
@@ -618,7 +654,9 @@ p {
 
 .buy-section {
   align-items: center;
-  border-block: 1px solid rgba(248, 243, 234, 0.1);
+  background: #fffaf1;
+  border-block: 1px solid var(--paper-line);
+  color: var(--paper-ink);
   display: flex;
   gap: 26px;
   justify-content: space-between;
@@ -636,7 +674,7 @@ p {
 }
 
 .purchase-action span {
-  color: var(--muted);
+  color: var(--paper-muted);
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -644,7 +682,7 @@ p {
 }
 
 .purchase-action strong {
-  color: var(--gold-soft);
+  color: #8a6424;
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(2.6rem, 5vw, 4.8rem);
   line-height: 1;
@@ -652,11 +690,26 @@ p {
 }
 
 .updates-section {
-  background: #0d0d0c;
+  background:
+    linear-gradient(180deg, rgba(8, 8, 7, 0.88), rgba(8, 8, 7, 0.96)),
+    url("assets/studio-bg.jpg") center 58% / cover no-repeat;
+  border-top: 1px solid rgba(248, 243, 234, 0.1);
 }
 
 .compact-form {
-  background: transparent;
+  background: rgba(8, 8, 7, 0.56);
+  border-color: rgba(248, 243, 234, 0.18);
+  box-shadow: none;
+}
+
+.compact-form span {
+  color: var(--ink);
+}
+
+.compact-form input {
+  background: #151514;
+  border-color: rgba(248, 243, 234, 0.38);
+  color: var(--ink);
 }
 
 .site-footer {
