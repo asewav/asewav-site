@@ -71,6 +71,11 @@
   --graphite: #242424;
   --white: #ffffff;
   --cream: #f4efe6;
+  --paper: #fbf6ec;
+  --paper-soft: #efe4d2;
+  --paper-ink: #17110a;
+  --paper-muted: #5f5548;
+  --paper-line: rgba(23, 17, 10, 0.16);
   --soft-gray: #b9b9b9;
   --line: rgba(255, 255, 255, 0.18);
   --gold: #dfb54e;
@@ -676,7 +681,10 @@ h1 span {
 
 .inside-section {
   background:
-    linear-gradient(140deg, #101010, #070707 68%);
+    linear-gradient(140deg, rgba(223, 181, 78, 0.16), transparent 44%),
+    var(--paper);
+  border-block: 1px solid var(--paper-line);
+  color: var(--paper-ink);
   display: grid;
   gap: 88px;
   grid-template-columns: minmax(260px, 0.5fr) minmax(0, 1fr);
@@ -694,6 +702,10 @@ h1 span {
   margin-bottom: 26px;
 }
 
+.inside-section .section-index {
+  color: #795f22;
+}
+
 .inside-heading h2,
 .workflow-intro h2 {
   font-size: 4.4rem;
@@ -703,18 +715,18 @@ h1 span {
 }
 
 .inside-heading > p:last-child {
-  color: var(--soft-gray);
+  color: var(--paper-muted);
   line-height: 1.7;
   max-width: 390px;
 }
 
 .contents-list {
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--paper-line);
 }
 
 .content-row {
   align-items: baseline;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--paper-line);
   display: grid;
   gap: 24px;
   grid-template-columns: 44px minmax(210px, 0.75fr) minmax(220px, 1fr);
@@ -722,7 +734,7 @@ h1 span {
 }
 
 .content-number {
-  color: var(--gold);
+  color: #795f22;
   font-family: Georgia, "Times New Roman", serif;
 }
 
@@ -734,7 +746,7 @@ h1 span {
 }
 
 .content-row p {
-  color: var(--soft-gray);
+  color: var(--paper-muted);
   line-height: 1.65;
   margin-bottom: 0;
 }
@@ -1035,12 +1047,17 @@ h1 span {
 
 .genre-section {
   background:
-    linear-gradient(100deg, rgba(58, 119, 116, 0.13), transparent 34%),
-    linear-gradient(260deg, rgba(121, 101, 139, 0.14), transparent 38%),
-    var(--black);
-  border-bottom: 1px solid var(--line);
+    linear-gradient(100deg, rgba(58, 119, 116, 0.12), transparent 34%),
+    linear-gradient(260deg, rgba(121, 101, 139, 0.12), transparent 38%),
+    var(--paper-soft);
+  border-block: 1px solid var(--paper-line);
+  color: var(--paper-ink);
   padding: 110px var(--page-x);
   text-align: center;
+}
+
+.genre-section .section-index {
+  color: #795f22;
 }
 
 .genre-line {
@@ -1053,7 +1070,7 @@ h1 span {
 }
 
 .genre-line span::after {
-  color: var(--gold);
+  color: #9f7529;
   content: "/";
   margin: 0 16px;
 }
@@ -1068,6 +1085,7 @@ h1 span {
   align-items: center;
   border: 1px solid currentColor;
   border-radius: var(--radius);
+  color: inherit;
   display: inline-flex;
   font-size: 0.78rem;
   font-weight: 900;
@@ -1094,7 +1112,9 @@ h1 span {
 
 .ebook-promo {
   align-items: start;
-  background: #171717;
+  background: #fffaf1;
+  border-block: 1px solid var(--paper-line);
+  color: var(--paper-ink);
   display: grid;
   gap: 72px;
   grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1fr);
@@ -1102,7 +1122,7 @@ h1 span {
 }
 
 .ebook-promo .section-index {
-  color: var(--soft-gray);
+  color: #795f22;
 }
 
 .ebook-promo h2 {
@@ -1113,7 +1133,7 @@ h1 span {
 }
 
 .ebook-copy p {
-  color: var(--soft-gray);
+  color: var(--paper-muted);
   line-height: 1.75;
   max-width: 650px;
 }
@@ -1126,6 +1146,12 @@ h1 span {
 .outline-button:focus-visible {
   background: var(--white);
   color: var(--black);
+}
+
+.ebook-promo .outline-button:hover,
+.ebook-promo .outline-button:focus-visible {
+  background: var(--paper-ink);
+  color: var(--white);
 }
 
 .site-footer {
