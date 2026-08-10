@@ -816,6 +816,37 @@ p {
   max-width: 12ch;
 }
 
+.midi-pack-hero {
+  align-items: center;
+  min-height: auto;
+  padding-bottom: clamp(28px, 4vw, 34px);
+  padding-top: clamp(34px, 5vw, 40px);
+}
+
+.midi-pack-hero .guide-summary {
+  gap: 14px;
+  padding: clamp(18px, 3vw, 26px);
+}
+
+.midi-pack-hero .guide-summary h2 {
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  max-width: 18ch;
+}
+
+.midi-pack-hero .guide-summary .eyebrow {
+  margin-bottom: 0;
+}
+
+.midi-pack-hero .guide-summary ul {
+  font-size: 0.94rem;
+  gap: 6px;
+  line-height: 1.45;
+}
+
+.midi-pack-mobile-image {
+  display: none;
+}
+
 .guide-summary,
 .guide-cta-panel {
   align-self: center;
@@ -835,6 +866,13 @@ p {
   font-size: clamp(2rem, 4vw, 3.4rem);
   margin-bottom: 0;
   max-width: 10ch;
+}
+
+.guide-summary-image {
+  display: block;
+  filter: drop-shadow(0 22px 34px rgba(38, 27, 15, 0.2));
+  justify-self: center;
+  max-width: min(100%, 100px);
 }
 
 .guide-summary ul {
@@ -1142,6 +1180,27 @@ p {
   .guide-hero h1 {
     font-size: clamp(2.65rem, 12vw, 4.2rem);
     max-width: 100%;
+  }
+
+  .midi-pack-hero {
+    gap: 18px;
+    padding-bottom: 28px;
+    padding-top: 28px;
+  }
+
+  .midi-pack-hero .guide-summary {
+    display: none;
+  }
+
+  .midi-pack-hero .hero-note {
+    display: none;
+  }
+
+  .midi-pack-mobile-image {
+    display: block;
+    filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.32));
+    margin-bottom: 12px;
+    width: 64px;
   }
 
   .about-hero,
