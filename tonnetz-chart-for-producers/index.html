@@ -19,7 +19,8 @@
     <meta name="twitter:title" content="ASE WAV Tonnetz Chart for Producers">
     <meta name="twitter:description" content="A visual guide to chord movement. 37-page PDF ebook. $9.99.">
     <meta name="twitter:image" content="https://asewav.com/assets/tonnetz/product.jpg">
-    <link rel="stylesheet" href="../tonnetz.css?v=20260915-1">
+    <link rel="stylesheet" href="/styles.css?v=20260916-1">
+    <link rel="stylesheet" href="../tonnetz.css?v=20260916-1">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -39,7 +40,7 @@
             "name": "ASE WAV Tonnetz Chart for Producers",
             "description": "A 37-page music theory PDF ebook with 12 chord movement patterns, 24 major and minor triads, reference charts, and practice pages.",
             "inLanguage": "en",
-            "dateModified": "2026-09-15",
+            "dateModified": "2026-09-16",
             "isPartOf": {"@id": "https://asewav.com/#website"},
             "mainEntity": {"@id": "https://asewav.com/tonnetz-chart-for-producers/#product"},
             "breadcrumb": {"@id": "https://asewav.com/tonnetz-chart-for-producers/#breadcrumbs"}
@@ -98,15 +99,23 @@
         ]
       }
     </script>
+  <script src="/scripts.js?v=20260916-1" defer></script>
   </head>
   <body class="tonnetz-page">
-    <a class="t-skip" href="#main">Skip to content</a>
-    <header class="t-header">
-      <a class="t-wordmark" href="/" aria-label="ASE WAV home">ASE WAV</a>
-      <nav aria-label="Main navigation">
-        <a href="/#book">R&amp;B ebook + MIDI</a>
-        <a href="/free/">Free pack</a>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" aria-label="Site header">
+      <a class="brand-mark" href="/" aria-label="ASE WAV home">ASE WAV</a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-navigation" title="Menu">
+        <svg class="icon menu-icon" aria-hidden="true"><use href="/assets/icons.svg#menu"/></svg>
+        <svg class="icon close-icon" aria-hidden="true"><use href="/assets/icons.svg#x"/></svg>
+      </button>
+      <nav id="site-navigation" class="site-nav" aria-label="Main navigation">
+        <a href="/#book">Products</a>
+        <a href="/#listen">Listen</a>
+        <a href="/#guides">Guides</a>
         <a href="/about/">About</a>
+        <a class="nav-cta" href="/free/">Get the free pack <span aria-hidden="true">&#8594;</span></a>
       </nav>
     </header>
     <main id="main">
@@ -203,11 +212,13 @@
         <div><a href="/free/">10 Smooth R&amp;B Progressions + MIDI <span aria-hidden="true">&#8594;</span></a><p>10 progressions, 10 MIDI files, and two PDF guides. Free.</p></div>
       </aside>
     </main>
-    <footer class="t-footer">
-      <a class="t-wordmark" href="/">ASE WAV</a>
+    <footer class="site-footer">
+      <a class="footer-brand" href="/">ASE WAV</a>
       <nav aria-label="Footer navigation">
-        <a href="/rnb-chord-progressions/">R&amp;B chord guide</a>
+        <a href="/tonnetz-chart-for-producers/">Tonnetz ebook</a>
+        <a href="/rnb-chord-progressions/">R&amp;B guide</a>
         <a href="/neo-soul-chord-progressions/">Neo-soul guide</a>
+        <a href="/free-rnb-midi-chord-pack/">Free MIDI guide</a>
         <a href="mailto:hello@asewav.com">Contact</a>
       </nav>
       <span>Music theory for producers.</span>
