@@ -60,6 +60,14 @@ class SiteChecks(unittest.TestCase):
                 ids = [a['id'] for _, a in page.nodes if 'id' in a]
                 self.assertEqual(len(ids), len(set(ids)), 'Duplicate HTML id')
 
+    def test_shared_navigation_script(self):
+        for name, page in self.pages.items():
+            with self.subTest(page=name):
+                scripts = [a for a in page.tags('script')
+                           if urlparse(a.get('src', '')).path == '/scripts.js']
+                self.assertEqual(len(scripts), 1, 'Shared navigation needs its script')
+                self.assertIn('defer', scripts[0])
+
     def test_local_links_and_assets(self):
         for name, page in self.pages.items():
             base = urljoin(BASE, name + '/') if name else BASE
