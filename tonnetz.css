@@ -23,7 +23,7 @@
 .tonnetz-page :focus-visible,
 .tonnetz-feature :focus-visible,
 .tonnetz-announcement :focus-visible { outline: 3px solid #936e1c; outline-offset: 5px; }
-.tonnetz-page section[id] { scroll-margin-top: 24px; }
+.tonnetz-page section[id] { scroll-margin-top: 88px; }
 
 .t-skip {
   position: absolute;

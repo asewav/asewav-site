@@ -28,8 +28,8 @@
       content="Download 10 Smooth R&B Progressions + MIDI from ASE WAV and learn how to build smoother chord movement in your DAW."
     >
     <meta name="twitter:image" content="https://asewav.com/assets/book-cover.jpg">
-    <link rel="stylesheet" href="../styles.css?v=20260810-1">
-    <script src="../scripts.js?v=20260625-2" defer></script>
+    <link rel="stylesheet" href="/styles.css?v=20260916-1">
+    <script src="/scripts.js?v=20260916-1" defer></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -66,7 +66,7 @@
             "name": "Free R&B MIDI Chord Pack for Producers",
             "description": "Download the official ASE WAV free R&B MIDI chord pack: 10 Smooth R&B Progressions + MIDI with matching MIDI files, PDF guides, and producer notes.",
             "datePublished": "2026-08-10",
-            "dateModified": "2026-08-10",
+            "dateModified": "2026-09-16",
             "isPartOf": {
               "@id": "https://asewav.com/#website"
             },
@@ -174,17 +174,19 @@
     </script>
   </head>
   <body>
+    <a class="skip-link" href="#top">Skip to content</a>
     <header class="site-header" aria-label="Site header">
-      <a class="brand-mark" href="/" aria-label="ASE WAV home">
-        <img src="../assets/asewav-logo.png" alt="ASE WAV">
-      </a>
-      <nav class="site-nav" aria-label="Main navigation">
-        <a href="/">Home</a>
-        <a href="/rnb-chord-progressions/">R&amp;B guide</a>
-        <a href="/neo-soul-chord-progressions/">Neo-soul guide</a>
-        <a class="nav-current" href="/free-rnb-midi-chord-pack/">Free MIDI</a>
-        <a href="/free/">Free pack</a>
-        <a href="https://shop.asewav.com/b/modern-rnb-chords-for-producers">Full bundle</a>
+      <a class="brand-mark" href="/" aria-label="ASE WAV home">ASE WAV</a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-navigation" title="Menu">
+        <svg class="icon menu-icon" aria-hidden="true"><use href="/assets/icons.svg#menu"/></svg>
+        <svg class="icon close-icon" aria-hidden="true"><use href="/assets/icons.svg#x"/></svg>
+      </button>
+      <nav id="site-navigation" class="site-nav" aria-label="Main navigation">
+        <a href="/#book">Products</a>
+        <a href="/#listen">Listen</a>
+        <a href="/#guides">Guides</a>
+        <a href="/about/">About</a>
+        <a class="nav-cta" href="/free/">Get the free pack <span aria-hidden="true">&#8594;</span></a>
       </nav>
     </header>
 
@@ -343,7 +345,7 @@
                 <div class="waveform" data-waveform aria-hidden="true"></div>
                 <div class="player-controls">
                   <button class="play-button" type="button" data-play aria-label="Play Neo-Soul Progression I">
-                    <span class="play-icon" aria-hidden="true"></span>
+                    <svg class="icon play-icon" aria-hidden="true"><use href="/assets/icons.svg#play"/></svg><svg class="icon pause-icon" aria-hidden="true"><use href="/assets/icons.svg#pause"/></svg>
                   </button>
                   <span class="time-readout" data-current>0:00</span>
                   <input class="seek-control" data-seek type="range" min="0" max="1000" value="0" aria-label="Seek Neo-Soul Progression I">
@@ -367,7 +369,7 @@
                 <div class="waveform" data-waveform aria-hidden="true"></div>
                 <div class="player-controls">
                   <button class="play-button" type="button" data-play aria-label="Play Neo-Soul Progression II">
-                    <span class="play-icon" aria-hidden="true"></span>
+                    <svg class="icon play-icon" aria-hidden="true"><use href="/assets/icons.svg#play"/></svg><svg class="icon pause-icon" aria-hidden="true"><use href="/assets/icons.svg#pause"/></svg>
                   </button>
                   <span class="time-readout" data-current>0:00</span>
                   <input class="seek-control" data-seek type="range" min="0" max="1000" value="0" aria-label="Seek Neo-Soul Progression II">
@@ -457,13 +459,15 @@
     </main>
 
     <footer class="site-footer">
-      <span>ASE WAV</span>
-      <a href="/">Home</a>
-      <a href="/free/">Free pack</a>
-      <a href="/rnb-chord-progressions/">R&amp;B guide</a>
-      <a href="/neo-soul-chord-progressions/">Neo-soul guide</a>
-      <a href="/about/">About</a>
-      <a href="mailto:hello@asewav.com">hello@asewav.com</a>
+      <a class="footer-brand" href="/">ASE WAV</a>
+      <nav aria-label="Footer navigation">
+        <a href="/tonnetz-chart-for-producers/">Tonnetz ebook</a>
+        <a href="/rnb-chord-progressions/">R&amp;B guide</a>
+        <a href="/neo-soul-chord-progressions/">Neo-soul guide</a>
+        <a href="/free-rnb-midi-chord-pack/">Free MIDI guide</a>
+        <a href="mailto:hello@asewav.com">Contact</a>
+      </nav>
+      <span>Music theory for producers.</span>
     </footer>
   </body>
 </html>
