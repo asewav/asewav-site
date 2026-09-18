@@ -1,0 +1,24 @@
+/* Homepage-only preview; shared guide and product styles stay unchanged. */
+#listen { background: #edf3f1; padding-block: 48px; }
+#listen .listen-heading { margin-bottom: 24px; }
+#listen .player-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 40px; }
+#listen h2 { max-width: 540px; }
+#listen .audio-player { gap: 14px; }
+#listen .track-number { color: #346453; }
+#book .product-art-spread { height: auto; aspect-ratio: 1.35; padding: 28px 20px; gap: 18px; overflow: hidden; background: #edf0f3; }
+#book .product-art-spread img { width: 43%; height: 100%; max-height: 320px; object-fit: contain; filter: drop-shadow(0 8px 8px #00000014); transition: transform 180ms ease; }
+#book .product-art-spread .product-page { transform: translateY(12px); }
+#book .product-art-spread:hover .product-page { transform: translateY(4px); }
+#book .product-item:nth-child(2) .product-art { background: #e6efea; }
+#book .product-item:nth-child(2) .product-art img { height: 100%; border: 0; }
+#inside { border-top: 1px solid var(--line); }
+#inside .sample-page-grid { gap: 24px; }
+@media (max-width: 700px) {
+  #listen { padding-block: 40px; }
+  #listen .player-list { grid-template-columns: 1fr; gap: 0; }
+  #listen h2 { font-size: 30px; }
+  #book .product-art-spread { padding: 22px 16px; gap: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #book .product-art-spread img { transition: none; }
+}
