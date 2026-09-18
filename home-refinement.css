@@ -1,0 +1,30 @@
+/* Homepage-only preview; shared guide and product styles stay unchanged. */
+.home-hero { padding-bottom: 28px; }
+.home-hero .product-stage { height: 286px; margin-top: 28px; }
+.product-stage .stage-page-left { display: none; }
+.product-stage .stage-cover { height: 270px; left: 32%; }
+.product-stage .stage-page-right { transform: none; height: 280px; right: 20%; bottom: 0; max-width: 44%; }
+#listen { background: #edf3f1; padding-block: 48px; }
+#listen .listen-heading { margin-bottom: 24px; }
+#listen .player-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 40px; }
+#listen h2 { max-width: 540px; }
+#listen .audio-player { gap: 14px; }
+#listen .track-number { color: #346453; }
+#book .product-art { height: 260px; }
+#book .product-art img { height: 224px; }
+#book .product-item:nth-child(2) .product-art img { height: 218px; }
+#inside { border-top: 1px solid var(--line); }
+#inside .sample-page-grid { gap: 24px; }
+@media (max-width: 700px) {
+  .home-hero .product-stage { height: 204px; margin-top: 24px; }
+  .product-stage .stage-cover { height: 194px; left: 27%; }
+  .product-stage .stage-page-right { height: 198px; right: 10%; }
+  #listen { padding-block: 40px; }
+  #listen .player-list { grid-template-columns: 1fr; gap: 0; }
+  #listen h2 { font-size: 30px; }
+}
+@media (max-height: 760px) {
+  .home-hero .product-stage { height: 166px; margin-top: 18px; }
+  .product-stage .stage-cover { height: 160px; }
+  .product-stage .stage-page-right { height: 164px; }
+}
