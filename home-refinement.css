@@ -1,4 +1,34 @@
 /* Homepage-only preview; shared guide and product styles stay unchanged. */
+.home-hero { padding: 36px 0 0; }
+.home-hero .hero-copy { padding: 0 24px 28px; }
+.home-hero .eyebrow { font-size: 11px; letter-spacing: 0; margin-bottom: 12px; }
+.home-hero h1 { font-size: 54px; line-height: 1.05; max-width: 1000px; }
+.home-hero h1 span { font-size: 30px; font-weight: 450; color: #656568; margin-top: 8px; }
+.home-hero .hero-lede { font-size: 16px; line-height: 1.6; margin-top: 16px; max-width: 650px; }
+.home-hero .hero-actions { margin-top: 20px; gap: 24px; }
+.hero-gallery { background: #f0f1f3; text-align: left; }
+.gallery-window { overflow: hidden; touch-action: pan-y; }
+.gallery-track { display: flex; transition: transform 650ms cubic-bezier(.22,.7,.2,1); }
+.gallery-slide { flex: 0 0 100%; min-width: 0; height: 330px; display: flex; align-items: center; justify-content: center; gap: 32px; padding: 20px 24px 6px; }
+.gallery-cover > img { height: 100%; width: 220px; object-fit: contain; filter: drop-shadow(0 12px 10px #00000015); }
+.gallery-note { width: 240px; margin: 0; }
+.gallery-note:first-child { text-align: right; }
+.gallery-note > span { display: block; color: #77787a; font-size: 12px; margin-bottom: 12px; }
+.gallery-note strong { display: block; font-size: 26px; line-height: 1.2; font-weight: 550; }
+.gallery-note small { display: block; font-size: 12px; color: #606367; margin-top: 14px; }
+.gallery-spread { gap: 22px; }
+.gallery-spread a { height: 100%; display: block; min-width: 0; }
+.gallery-spread img { height: 100%; width: auto; max-width: 100%; object-fit: contain; box-shadow: 0 5px 14px #00000018; }
+.gallery-bar { max-width: 1120px; margin: auto; min-height: 64px; padding: 8px 24px 12px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.gallery-bar[hidden] { display: none; }
+.gallery-caption { margin: 0; display: flex; gap: 20px; align-items: center; color: #585b60; font-size: 12px; }
+[data-gallery-count] { font-variant-numeric: tabular-nums; white-space: nowrap; color: #242526; }
+.gallery-controls { display: flex; gap: 6px; }
+.gallery-controls button { width: 40px; height: 40px; display: grid; place-items: center; border: 1px solid #d3d5d8; border-radius: 50%; background: transparent; color: #252628; cursor: pointer; }
+.gallery-controls button:hover { background: white; }
+.gallery-controls button:focus-visible { outline: 2px solid #346453; outline-offset: 3px; }
+.gallery-back { transform: rotate(180deg); }
+.gallery-status { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 #listen { background: #edf3f1; padding-block: 48px; }
 #listen .listen-heading { margin-bottom: 24px; }
 #listen .player-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 40px; }
@@ -14,11 +44,36 @@
 #inside { border-top: 1px solid var(--line); }
 #inside .sample-page-grid { gap: 24px; }
 @media (max-width: 700px) {
+  .home-hero { padding-top: 24px; }
+  .home-hero .hero-copy { padding-inline: 20px; padding-bottom: 24px; }
+  .home-hero h1 { font-size: 36px; max-width: 500px; }
+  .home-hero h1 span { font-size: 25px; margin-top: 6px; }
+  .home-hero .hero-lede { font-size: 14px; }
+  .home-hero .hero-actions { gap: 14px; }
+  .gallery-slide { height: 280px; padding: 16px 16px 4px; gap: 12px; }
+  .gallery-cover > img { width: 190px; }
+  .gallery-note { display: none; }
+  .gallery-spread a { display: flex; align-items: center; }
+  .gallery-spread img { height: auto; max-height: 100%; width: 100%; }
+  .gallery-bar { padding-inline: 16px; gap: 8px; }
+  .gallery-caption { gap: 8px; flex-wrap: wrap; font-size: 11px; }
+  .gallery-caption [data-gallery-caption] { max-width: 160px; }
+  .gallery-controls { gap: 4px; flex-shrink: 0; }
+  .gallery-controls button { width: 36px; height: 36px; }
   #listen { padding-block: 40px; }
   #listen .player-list { grid-template-columns: 1fr; gap: 0; }
   #listen h2 { font-size: 30px; }
   #book .product-art-spread { padding: 22px 16px; gap: 12px; }
 }
+@media (max-width: 380px) {
+  .home-hero { padding-top: 20px; }
+  .home-hero h1 { font-size: 32px; }
+  .home-hero h1 span { font-size: 23px; }
+  .home-hero .hero-copy { padding-bottom: 18px; }
+  .home-hero .hero-lede { font-size: 13px; line-height: 1.5; }
+  .gallery-slide { height: 230px; }
+}
 @media (prefers-reduced-motion: reduce) {
+  .gallery-track { transition: none; }
   #book .product-art-spread img { transition: none; }
 }
