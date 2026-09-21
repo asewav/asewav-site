@@ -118,7 +118,7 @@ if (previews.length && typeof HTMLDialogElement !== "undefined") {
   previews.forEach((link) => link.addEventListener("click", (event) => {
     if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
-    caption.textContent = link.querySelector("img").alt;
+    caption.textContent = (link.querySelector(".product-page") || link.querySelector("img")).alt;
     image.alt = caption.textContent;
     image.src = link.href;
     scrollOverflow = document.body.style.overflow;

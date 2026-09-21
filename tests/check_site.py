@@ -68,6 +68,32 @@ class SiteChecks(unittest.TestCase):
                 self.assertEqual(len(scripts), 1, 'Shared navigation needs its script')
                 self.assertIn('defer', scripts[0])
 
+    def test_header_wordmark(self):
+        for name, page in self.pages.items():
+            with self.subTest(page=name):
+                logos = [a for a in page.tags('img')
+                         if a.get('src') == '/assets/asewav-wordmark.png']
+                self.assertEqual(len(logos), 1)
+                self.assertEqual(logos[0].get('alt'), 'ASE WAV')
+                self.assertEqual(logos[0].get('width'), '1163')
+                self.assertEqual(logos[0].get('height'), '208')
+
+    def test_home_gallery_accessibility_and_scope(self):
+        home = self.pages['']
+        slides = [attrs for _, attrs in home.nodes
+                  if attrs.get('aria-roledescription') == 'slide']
+        self.assertEqual(len(slides), 3)
+        self.assertNotIn('inert', slides[0])
+        for slide in slides[1:]:
+            self.assertIn('inert', slide)
+            self.assertEqual(slide.get('aria-hidden'), 'true')
+        for name, page in self.pages.items():
+            scripts = [a for a in page.tags('script')
+                       if urlparse(a.get('src', '')).path == '/home-gallery.js']
+            self.assertEqual(len(scripts), 0 if name else 1)
+            if scripts:
+                self.assertIn('defer', scripts[0])
+
     def test_local_links_and_assets(self):
         for name, page in self.pages.items():
             base = urljoin(BASE, name + '/') if name else BASE

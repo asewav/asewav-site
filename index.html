@@ -30,7 +30,9 @@
     <meta name="twitter:image" content="https://asewav.com/assets/book-cover.jpg">
     <link rel="preconnect" href="https://assets.mlcdn.com">
     <link rel="preconnect" href="https://groot.mailerlite.com">
-    <link rel="stylesheet" href="/styles.css?v=20260916-1">
+    <link rel="stylesheet" href="/styles.css?v=20260920-1">
+    <link rel="stylesheet" href="/home-refinement.css?v=20260920-1">
+    <script src="/home-gallery.js?v=20260919-1" defer></script>
 
     <script src="/scripts.js?v=20260916-1" defer></script>
     <script type="application/ld+json">
@@ -149,7 +151,7 @@
   <body>
     <a class="skip-link" href="#top">Skip to content</a>
     <header class="site-header" aria-label="Site header">
-      <a class="brand-mark" href="/" aria-label="ASE WAV home">ASE WAV</a>
+      <a class="brand-mark" href="/" aria-label="ASE WAV home"><img src="/assets/asewav-wordmark.png" width="1163" height="208" alt="ASE WAV"></a>
       <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-navigation" title="Menu">
         <svg class="icon menu-icon" aria-hidden="true"><use href="/assets/icons.svg#menu"/></svg>
         <svg class="icon close-icon" aria-hidden="true"><use href="/assets/icons.svg#x"/></svg>
@@ -166,18 +168,40 @@
     <main id="top">
       <section class="home-hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow">ASE WAV / Ebook + MIDI</p>
-          <h1 id="hero-title">Modern R&amp;B Chords<span>for Producers.</span></h1>
-          <p class="hero-lede">Richer voicings. Smoother movement.<br>A practical harmony guide, with MIDI to make it yours.</p>
+          <h1 id="hero-title"><span class="hero-name">Modern R&amp;B Chords</span><span class="hero-audience">for Producers</span></h1>
+          <p class="hero-lede">A new way to your next chord.</p>
           <div class="hero-actions">
             <a class="button" href="https://shop.asewav.com/b/modern-rnb-chords-for-producers">Get the bundle - $27</a>
-            <a class="text-link" href="#listen">Listen <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#arrow-down"/></svg></a>
+            <a class="text-link" href="#listen">Hear the progressions <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#arrow-down"/></svg></a>
           </div>
         </div>
-        <div class="product-stage" aria-label="Modern R&B Chords ebook and actual sample pages">
-          <img class="stage-page-left" src="/assets/previews/sample-formula.webp" width="640" height="1000" alt="Sample page: the modern R&amp;B harmony formula">
-          <img class="stage-cover" src="/assets/previews/book-cutout-v2.webp" alt="Modern R&amp;B Chords for Producers ebook cover" fetchpriority="high" width="628" height="900">
-          <img class="stage-page-right" src="/assets/previews/sample-piano-grips.webp" width="640" height="1000" alt="Sample page: playable piano grips">
+        <div class="hero-gallery" role="region" aria-roledescription="carousel" aria-label="Inside Modern R&amp;B Chords" data-gallery>
+          <div class="gallery-window">
+            <div class="gallery-track">
+              <div class="gallery-slide gallery-cover" role="group" aria-roledescription="slide" aria-label="1 of 3: The ebook and MIDI bundle">
+                <p class="gallery-note"><span>The guide</span><strong>Understand<br>the harmony.</strong><small>124 pages. Built for producers.</small></p>
+                <img src="/assets/previews/book-cutout-v2.webp" alt="Modern R&amp;B Chords for Producers ebook cover" fetchpriority="high" width="628" height="900">
+                <p class="gallery-note"><span>The MIDI</span><strong>Make it<br>your own.</strong><small>439 files. Your next starting point.</small></p>
+              </div>
+              <div class="gallery-slide gallery-spread" role="group" aria-roledescription="slide" aria-label="2 of 3: Harmony and piano grips" aria-hidden="true" inert>
+                <a href="/assets/sample-formula.png" data-preview aria-label="Enlarge the harmony formula sample"><img src="/assets/previews/sample-formula.webp" width="640" height="1000" alt="The modern R&amp;B harmony formula sample page"></a>
+                <a href="/assets/sample-piano-grips.png" data-preview aria-label="Enlarge the piano grips sample"><img src="/assets/previews/sample-piano-grips.webp" width="640" height="1000" alt="Playable piano grips sample page"></a>
+              </div>
+              <div class="gallery-slide gallery-spread" role="group" aria-roledescription="slide" aria-label="3 of 3: Contents and circle of fifths" aria-hidden="true" inert>
+                <a href="/assets/sample-contents.png" data-preview aria-label="Enlarge the table of contents"><img src="/assets/previews/sample-contents.webp" width="640" height="1000" alt="Modern R&amp;B Chords table of contents"></a>
+                <a href="/assets/sample-circle-of-fifths.png" data-preview aria-label="Enlarge the circle of fifths sample"><img src="/assets/previews/sample-circle-of-fifths.webp" width="640" height="1000" alt="Circle of fifths sample page"></a>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-bar" hidden>
+            <p class="gallery-caption"><span data-gallery-count>01 / 03</span><span data-gallery-caption>The ebook + MIDI collection</span></p>
+            <div class="gallery-controls">
+              <button type="button" data-gallery-prev aria-label="Previous product image" title="Previous image"><svg class="icon gallery-back" aria-hidden="true"><use href="/assets/icons.svg#arrow-right"/></svg></button>
+              <button type="button" data-gallery-toggle aria-label="Pause slideshow" title="Pause slideshow"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#pause"/></svg></button>
+              <button type="button" data-gallery-next aria-label="Next product image" title="Next image"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#arrow-right"/></svg></button>
+            </div>
+          </div>
+          <span class="gallery-status" aria-live="polite" aria-atomic="true"></span>
         </div>
       </section>
       <section class="facts-band" aria-label="Modern R&B bundle contents">
@@ -186,41 +210,9 @@
         <div><strong>25</strong><span>progressions</span></div>
         <div><strong>50</strong><span>chord starters</span></div>
       </section>
-      <section id="book" class="section" aria-labelledby="products-title">
-        <div class="section-heading">
-          <div><p class="eyebrow">The collection</p><h2 id="products-title">A new way into your next chord.</h2></div>
-          <p>Practical resources for your next R&amp;B, neo-soul, or soulful production session.</p>
-        </div>
-        <div class="products-grid">
-          <article id="buy" class="product-item">
-            <a class="product-art" href="https://shop.asewav.com/b/modern-rnb-chords-for-producers" aria-label="Shop Modern R&B Chords for Producers">
-              <img src="/assets/previews/book-cutout-v2.webp" alt="Modern R&amp;B Chords for Producers ebook cover" loading="lazy" width="628" height="900">
-            </a>
-            <div class="product-meta"><span>Ebook + MIDI bundle</span><span>$27</span></div>
-            <h3>Modern R&amp;B Chords<br>for Producers</h3>
-            <p>Learn the harmony behind the sound. Build with 439 MIDI files, 25 progressions, and 50 chord starters.</p>
-            <div class="product-links">
-              <a class="button" href="https://shop.asewav.com/b/modern-rnb-chords-for-producers">Get the bundle</a>
-              <a class="text-link" href="#inside">Look inside <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#arrow-right"/></svg></a>
-            </div>
-          </article>
-          <article id="tonnetz" class="product-item">
-            <a class="product-art" href="/tonnetz-chart-for-producers/" aria-label="Explore Tonnetz Chart for Producers">
-              <img src="/assets/tonnetz/cover.png" width="1280" height="2000" alt="ASE WAV Tonnetz Chart for Producers ebook cover" loading="lazy">
-            </a>
-            <div class="product-meta"><span>37-page PDF ebook</span><span>$9.99</span></div>
-            <h3>Tonnetz Chart<br>for Producers</h3>
-            <p>See how chords connect. Explore 12 movement patterns, all 24 major and minor triads, and hands-on practice pages.</p>
-            <div class="product-links">
-              <a class="button" href="/tonnetz-chart-for-producers/">Explore the ebook</a>
-              <a class="text-link" href="https://shop.asewav.com/buy?cart_links%5B0%5D=xvIMk&amp;qty%5BxvIMk%5D=1&amp;s=1&amp;cart_links%5B%5D=xvIMk">Buy - $9.99 <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#arrow-up-right"/></svg></a>
-            </div>
-          </article>
-        </div>
-      </section>
       <section id="listen" class="section soft-section" aria-labelledby="listen-title">
         <div class="listen-heading">
-          <div><p class="eyebrow">The sound of ASE WAV</p><h2 id="listen-title">Let the chords speak.</h2></div>
+          <div><p class="eyebrow">Press play / Explore the harmony</p><h2 id="listen-title">Hear where the chords can go.</h2></div>
           <p>Two audio examples of the voicing, color, and movement explored in Modern R&amp;B Chords for Producers.</p>
         </div>
         <div class="player-list">
@@ -273,6 +265,40 @@
           </article>
         </div>
       </section>
+      <section id="book" class="section" aria-labelledby="products-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">The collection</p><h2 id="products-title">Two ways to build your harmony.</h2></div>
+          <p>Build with the ebook and MIDI bundle, or explore chord relationships with the visual Tonnetz guide.</p>
+        </div>
+        <div class="products-grid">
+          <article id="buy" class="product-item">
+            <a class="product-art product-art-spread" href="/assets/sample-piano-grips.png" data-preview aria-label="Preview the piano grips page from Modern R&B Chords for Producers">
+              <img src="/assets/previews/book-cutout-v2.webp" alt="Modern R&amp;B Chords for Producers ebook cover" loading="lazy" width="628" height="900">
+              <img class="product-page" src="/assets/previews/sample-piano-grips.webp" alt="Inside the ebook: basic and seventh chord piano grips" loading="lazy" width="640" height="1000">
+            </a>
+            <div class="product-meta"><span>Ebook + MIDI bundle</span><span>$27</span></div>
+            <h3>Modern R&amp;B Chords<br>for Producers</h3>
+            <p>For learning and building in your DAW. Explore chord color, voice leading, and bass movement with 25 progressions, 50 chord starters, and 439 MIDI files.</p>
+            <div class="product-links">
+              <a class="button" href="https://shop.asewav.com/b/modern-rnb-chords-for-producers">Get the bundle</a>
+              <a class="text-link" href="#inside">Look inside <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#arrow-right"/></svg></a>
+            </div>
+          </article>
+          <article id="tonnetz" class="product-item">
+            <a class="product-art product-art-spread" href="/assets/tonnetz/triad-atlas.png" data-preview aria-label="Preview the Tonnetz triad atlas page">
+              <img src="/assets/tonnetz/cover.png" width="1280" height="2000" alt="ASE WAV Tonnetz Chart for Producers ebook cover" loading="lazy">
+              <img class="product-page" src="/assets/tonnetz/triad-atlas.png" alt="Inside the Tonnetz ebook: triad atlas reference page" loading="lazy">
+            </a>
+            <div class="product-meta"><span>37-page PDF ebook</span><span>$9.99</span></div>
+            <h3>Tonnetz Chart<br>for Producers</h3>
+            <p>For finding your next chord visually. Explore 12 movement patterns and all 24 major and minor triads. A standalone PDF with practice pages; no MIDI or audio included.</p>
+            <div class="product-links">
+              <a class="button" href="/tonnetz-chart-for-producers/">Explore the ebook</a>
+              <a class="text-link" href="https://shop.asewav.com/buy?cart_links%5B0%5D=xvIMk&amp;qty%5BxvIMk%5D=1&amp;s=1&amp;cart_links%5B%5D=xvIMk">Buy - $9.99 <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#arrow-up-right"/></svg></a>
+            </div>
+          </article>
+        </div>
+      </section>
       <section id="inside" class="section" aria-labelledby="inside-title">
         <div class="section-heading">
           <div><p class="eyebrow">Inside Modern R&amp;B Chords</p><h2 id="inside-title">From the page to your session.</h2></div>
@@ -311,7 +337,7 @@
         </div>
       </section>
       <section id="faq" class="section faq-section" aria-labelledby="faq-title">
-        <div><p class="eyebrow">A few details</p><h2 id="faq-title">Good to know.</h2></div>
+        <div><h2 id="faq-title">Frequently asked questions</h2></div>
         <div class="faq-list">
 <details><summary>What is ASE WAV?</summary><p>ASE WAV is the official site for producer-focused R&amp;B harmony resources, MIDI packs, and chord guides, including Modern R&amp;B Chords for Producers and the free 10 Smooth R&amp;B Progressions + MIDI pack.</p></details>
 <details><summary>What is included in Modern R&amp;B Chords for Producers?</summary><p>The full bundle includes a 124-page guide, 439 MIDI files, 25 R&amp;B progressions, and 50 chord starters.</p></details>
