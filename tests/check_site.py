@@ -68,6 +68,16 @@ class SiteChecks(unittest.TestCase):
                 self.assertEqual(len(scripts), 1, 'Shared navigation needs its script')
                 self.assertIn('defer', scripts[0])
 
+    def test_header_wordmark(self):
+        for name, page in self.pages.items():
+            with self.subTest(page=name):
+                logos = [a for a in page.tags('img')
+                         if a.get('src') == '/assets/asewav-wordmark.png']
+                self.assertEqual(len(logos), 1)
+                self.assertEqual(logos[0].get('alt'), 'ASE WAV')
+                self.assertEqual(logos[0].get('width'), '1163')
+                self.assertEqual(logos[0].get('height'), '208')
+
     def test_home_gallery_accessibility_and_scope(self):
         home = self.pages['']
         slides = [attrs for _, attrs in home.nodes
