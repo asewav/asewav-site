@@ -1,10 +1,10 @@
 /* Homepage-only preview; shared guide and product styles stay unchanged. */
 .home-hero { padding: 24px 0 0; background: #f3f4f2; }
 .home-hero .hero-copy { padding: 0 24px 8px; }
-.home-hero h1 { font-size: 34px; font-weight: 500; line-height: 1.16; max-width: 850px; }
-.home-hero h1 .hero-name { display: block; font-size: inherit; font-weight: 500; color: #202622; margin: 0; }
-.home-hero h1 .hero-audience { display: block; font-size: 22px; font-weight: 400; color: #555c57; margin-top: 4px; }
-.home-hero .hero-lede { font-size: 16px; line-height: 1.5; color: #272e29; margin-top: 10px; max-width: 650px; }
+.home-hero h1 { font-size: 34px; font-weight: 700; line-height: 1.16; max-width: 850px; }
+.home-hero h1 .hero-name { display: block; font-size: inherit; font-weight: 700; color: #111111; margin: 0; }
+.home-hero h1 .hero-audience { display: block; font-size: 22px; font-weight: 400; color: #555555; margin-top: 4px; }
+.home-hero .hero-lede { font-size: 16px; line-height: 1.5; color: #555555; margin-top: 10px; max-width: 650px; }
 .home-hero .hero-actions { margin-top: 14px; gap: 24px; }
 .hero-gallery { background: transparent; text-align: left; }
 .gallery-window { overflow: hidden; touch-action: pan-y; }
