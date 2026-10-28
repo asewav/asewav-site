@@ -1,0 +1,86 @@
+/* Local portfolio direction, inspired by the owner's visual references. */
+.portfolio-draft { background: #f8f8f6; --gold: #595959; }
+.portfolio-draft .site-header { position: absolute; inset: 0 0 auto; height: 80px; background: #00000029; color: white; border: 0; padding-inline: 44px; gap: 32px; }
+.portfolio-draft .brand-mark { font-size: 22px; font-weight: 550; }
+.brand-period { color: #efb2b0; }
+.portfolio-draft .site-nav { gap: 26px; font-size: 12px; }
+.portfolio-draft .site-nav a:hover { color: #fff; text-decoration: underline; }
+.portfolio-draft .site-nav .nav-cta { border-color: #ffffff5e; }
+.portfolio-draft .nav-toggle { color: white; }
+.portfolio-draft .practice-hero { height: calc(100svh - 48px); min-height: 640px; max-height: 960px; color: #fff; background: #151515; }
+.portfolio-draft .signal-art { inset: 0; width: 100%; height: 100%; max-width: 100%; transform: none; object-fit: cover; object-position: center; }
+.portfolio-draft .practice-hero::after { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(180deg, rgb(10 8 8 / 28%) 0%, rgb(10 8 8 / 18%) 20%, rgb(10 8 8 / 62%) 43%, rgb(10 8 8 / 70%) 54%, rgb(10 8 8 / 26%) 78%, rgb(10 8 8 / 62%) 100%); }
+.practice-mosaic { position: absolute; inset: 0; z-index: -2; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); grid-template-rows: minmax(0,1fr); gap: 16px; padding: 16px; background: #111; }
+.practice-mosaic > div { min-width: 0; overflow: hidden; }
+.mosaic-studio { grid-column: auto; grid-row: auto; }
+.mosaic-studio img { width: 100%; height: 100%; object-fit: cover; object-position: center 45%; }
+.mosaic-companion { background-image: url('/assets/warm-companion-tiles.jpg'); background-size: auto 200%; background-repeat: no-repeat; }
+.studio-only .practice-mosaic { grid-template-columns: minmax(0,1fr); grid-template-rows: minmax(0,1fr); }
+.studio-only .mosaic-abstract { display: none; }
+.mosaic-abstract { background-position: left bottom; }
+.portfolio-draft .practice-hero-copy { position: relative; height: 100%; max-width: none; padding: 0; }
+.portfolio-draft .practice-hero .practice-kicker { position: absolute; top: 26%; width: 100%; padding-inline: 24px; margin: 0; text-align: center; color: #fff; font-size: 11px; }
+.portfolio-draft .practice-hero h1 { position: absolute; top: 32%; left: 24px; right: 24px; max-width: none; text-align: center; font-size: 160px; font-weight: 550; line-height: 1; }
+.hero-statement { position: absolute; top: calc(32% + 180px); left: 24px; right: 24px; color: #fff; font-size: 20px; text-align: center; }
+.portfolio-draft .practice-hero-intro { position: absolute; left: 44px; bottom: 116px; max-width: 360px; color: #fff; font-size: 14px; line-height: 1.6; margin: 0; }
+.portfolio-draft .practice-actions { position: absolute; right: 44px; bottom: 118px; margin: 0; gap: 24px; }
+.portfolio-draft .practice-actions .button { color: #161616; background: #f4d7c9; border-color: #f4d7c9; border-radius: 0; }
+.portfolio-draft .practice-actions .button:hover { background: #edc2ad; }
+.portfolio-draft .practice-actions .text-link { color: white; }
+.portfolio-draft .hero-colophon { left: 44px; right: 44px; bottom: 22px; color: #fff; padding-top: 18px; border-top: 1px solid #ffffff70; }
+.portfolio-draft .hero-colophon a { color: white; border-color: #ffffff80; }
+.portfolio-draft .practice-intro { background: #f8f8f6; padding-block: 110px; }
+.portfolio-draft .practice-intro h2 { font-size: 54px; font-weight: 450; }
+.portfolio-draft .practice-services { background: #181818; color: #f7f7f5; }
+.portfolio-draft .practice-services .practice-kicker { color: #bcbcbc; }
+.portfolio-draft .practice-section-heading h2 { font-weight: 450; }
+.portfolio-draft .practice-services p, .portfolio-draft .service-detail ul { color: #c7c7c7; }
+.portfolio-draft .service-list details, .portfolio-draft .migration-offer { border-color: #484848; }
+.portfolio-draft .service-number { color: #d6b67d; }
+.portfolio-draft .service-detail li::before { color: #bfbfbf; }
+.portfolio-draft .migration-offer .offer-heading { color: white; }
+.portfolio-draft .music-showcase { background: #101010; color: #fff; border: 0; padding-top: 64px; }
+.portfolio-draft .music-showcase .practice-kicker, .portfolio-draft .music-showcase .hero-lede { color: #bdbdbd; }
+.portfolio-draft .music-showcase .button { background: white; color: #161616; border-color: white; }
+.portfolio-draft .gallery-note strong, .portfolio-draft .gallery-note small, .portfolio-draft .gallery-note > span, .portfolio-draft .gallery-caption, .portfolio-draft [data-gallery-count] { color: #d1d1d1; }
+.portfolio-draft .gallery-controls button { color: white; border-color: #626262; }
+.portfolio-draft .gallery-controls button:hover { background: #333; }
+.portfolio-draft .facts-band { background: #101010; color: #fff; border-color: #363636; }
+.portfolio-draft .facts-band span { color: #b9b9b9; }
+.portfolio-draft .facts-band div + div { border-color: #424242; }
+.portfolio-draft #listen { background: #efefed; }
+.portfolio-draft .section-heading h2, .portfolio-draft .listen-heading h2 { font-weight: 500; }
+.portfolio-draft .button { border-radius: 0; }
+.portfolio-draft .practice-contact { background: #191919; border-bottom: 1px solid #444; }
+.portfolio-draft .practice-contact .practice-kicker { color: #d6b67d; }
+.portfolio-draft .contact-email { color: #f2c7b8; }
+.portfolio-draft .site-footer { background: #191919; color: #e7e7e7; border-color: #444; }
+.portfolio-draft .site-footer .footer-brand img { filter: brightness(0) invert(1); }
+@media (min-width: 1700px) { .portfolio-draft .practice-hero h1 { font-size: 190px; } .hero-statement { top: calc(32% + 210px); } }
+@media (min-width: 701px) and (max-width: 1050px) {
+  .portfolio-draft .practice-hero h1 { font-size: 120px; }
+  .hero-statement { top: calc(32% + 140px); }
+  .portfolio-draft .practice-hero-intro { max-width: 300px; bottom: 140px; }
+  .portfolio-draft .practice-actions { bottom: 90px; }
+}
+@media (max-width: 700px) {
+  .practice-mosaic { grid-template-columns: minmax(0,1fr); grid-template-rows: repeat(2,minmax(0,1fr)); gap: 10px; padding: 10px; }
+  .portfolio-draft .site-header { height: auto; min-height: 64px; padding: 10px 24px; gap: 0; }
+  .portfolio-draft .site-nav { background: #181818; padding-inline: 16px; }
+  .portfolio-draft .practice-hero { min-height: 660px; height: calc(100svh - 42px); max-height: 900px; }
+  .portfolio-draft .practice-hero .practice-kicker { top: 25%; font-size: 10px; }
+  .portfolio-draft .practice-hero h1 { top: 32%; font-size: 78px; left: 16px; right: 16px; }
+  .hero-statement { top: calc(32% + 94px); font-size: 15px; }
+  .portfolio-draft .practice-hero-intro { left: 24px; right: 24px; bottom: 182px; max-width: 340px; font-size: 13px; }
+  .portfolio-draft .practice-actions { left: 24px; right: 24px; bottom: 110px; gap: 18px; }
+  .portfolio-draft .practice-actions .text-link { font-size: 12px; }
+  .portfolio-draft .hero-colophon { left: 24px; right: 24px; bottom: 20px; }
+  .portfolio-draft .practice-intro { padding-block: 64px; }
+  .portfolio-draft .practice-intro h2 { font-size: 36px; }
+}
+@media (max-width: 380px) {
+  .portfolio-draft .practice-hero { min-height: 620px; }
+  .portfolio-draft .practice-hero h1 { font-size: 62px; }
+  .hero-statement { top: calc(32% + 78px); font-size: 13px; }
+  .portfolio-draft .practice-actions { gap: 14px; }
+}
