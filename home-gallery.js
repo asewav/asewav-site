@@ -5,7 +5,7 @@
   const track = gallery.querySelector('.gallery-track');
   const toggle = gallery.querySelector('[data-gallery-toggle]');
   const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const captions = ['The ebook + MIDI collection', 'Harmony you can put into practice', 'A closer look inside the guide'];
+  const captions = ['The harmony formula', 'Piano grips for your session', 'Contents & circle of fifths'];
   let index = 0;
   let playing = !motion.matches;
   let hovered = false;

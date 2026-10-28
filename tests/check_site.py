@@ -9,7 +9,7 @@ import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'https://asewav.com/'
-PAGES = ('', 'about', 'free', 'free-rnb-midi-chord-pack',
+PAGES = ('', 'music-education', 'about', 'free', 'free-rnb-midi-chord-pack',
          'rnb-chord-progressions', 'neo-soul-chord-progressions',
          'tonnetz-chart-for-producers')
 TONNETZ_CHECKOUT = ('https://shop.asewav.com/buy?cart_links%5B0%5D=xvIMk'
@@ -23,12 +23,24 @@ class Page(HTMLParser):
     def __init__(self, text):
         super().__init__()
         self.nodes, self.schemas = [], []
+        self.header_images = []
+        self.in_header = False
+        self.in_main_nav = False
+        self.main_nav_links = []
         self.schema_text = None
         self.feed(text)
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
         self.nodes.append((tag, attrs))
+        if tag == 'nav' and attrs.get('id') == 'site-navigation':
+            self.in_main_nav = True
+        if tag == 'a' and self.in_main_nav:
+            self.main_nav_links.append(attrs.get('href'))
+        if tag == 'header':
+            self.in_header = True
+        if tag == 'img' and self.in_header:
+            self.header_images.append(attrs)
         if tag == 'script' and attrs.get('type') == 'application/ld+json':
             self.schema_text = ''
 
@@ -37,6 +49,10 @@ class Page(HTMLParser):
             self.schema_text += text
 
     def handle_endtag(self, tag):
+        if tag == 'nav':
+            self.in_main_nav = False
+        if tag == 'header':
+            self.in_header = False
         if tag == 'script' and self.schema_text is not None:
             self.schemas.extend(json.loads(self.schema_text).get('@graph', []))
             self.schema_text = None
@@ -68,10 +84,21 @@ class SiteChecks(unittest.TestCase):
                 self.assertEqual(len(scripts), 1, 'Shared navigation needs its script')
                 self.assertIn('defer', scripts[0])
 
+    def test_consistent_main_navigation(self):
+        expected = ['/#services', '/music-education/', '/about/', '/#contact']
+        for name, page in self.pages.items():
+            with self.subTest(page=name):
+                self.assertEqual(page.main_nav_links, expected)
+
     def test_header_wordmark(self):
         for name, page in self.pages.items():
             with self.subTest(page=name):
-                logos = [a for a in page.tags('img')
+                if name in ('', 'music-education'):
+                    home_links = [a for a in page.tags('a') if a.get('aria-label') == 'ASE WAV home']
+                    self.assertTrue(home_links)
+                    self.assertTrue(all(a.get('href') == '/' for a in home_links))
+                    continue
+                logos = [a for a in page.header_images
                          if a.get('src') == '/assets/asewav-wordmark.png']
                 self.assertEqual(len(logos), 1)
                 self.assertEqual(logos[0].get('alt'), 'ASE WAV')
@@ -79,7 +106,7 @@ class SiteChecks(unittest.TestCase):
                 self.assertEqual(logos[0].get('height'), '208')
 
     def test_home_gallery_accessibility_and_scope(self):
-        home = self.pages['']
+        home = self.pages['music-education']
         slides = [attrs for _, attrs in home.nodes
                   if attrs.get('aria-roledescription') == 'slide']
         self.assertEqual(len(slides), 3)
@@ -90,7 +117,7 @@ class SiteChecks(unittest.TestCase):
         for name, page in self.pages.items():
             scripts = [a for a in page.tags('script')
                        if urlparse(a.get('src', '')).path == '/home-gallery.js']
-            self.assertEqual(len(scripts), 0 if name else 1)
+            self.assertEqual(len(scripts), 1 if name == 'music-education' else 0)
             if scripts:
                 self.assertIn('defer', scripts[0])
 
@@ -115,7 +142,7 @@ class SiteChecks(unittest.TestCase):
                             self.assertTrue(attrs.get('alt'), 'Product image needs alt text')
 
     def test_product_prices_and_checkout(self):
-        for name, price, checkout in (('', '27', MRC_CHECKOUT), ('tonnetz-chart-for-producers', '9.99', TONNETZ_CHECKOUT)):
+        for name, price, checkout in (('music-education', '27', MRC_CHECKOUT), ('tonnetz-chart-for-producers', '9.99', TONNETZ_CHECKOUT)):
             page = self.pages[name]
             product = next(n for n in page.schemas if n['@type'] == 'Product')
             self.assertEqual(product['offers']['price'], price)
@@ -128,10 +155,10 @@ class SiteChecks(unittest.TestCase):
                     self.assertIn(url, (MRC_CHECKOUT, TONNETZ_CHECKOUT))
 
     def test_signup_connections(self):
-        for name in ('', 'free'):
+        for name in ('music-education', 'free'):
             actions = [a.get('action') for a in self.pages[name].tags('form')]
             self.assertIn(FREE_FORM, actions)
-        self.assertIn(UPDATES_FORM, [a.get('action') for a in self.pages[''].tags('form')])
+        self.assertIn(UPDATES_FORM, [a.get('action') for a in self.pages['music-education'].tags('form')])
         for page in self.pages.values():
             for form in page.tags('form'):
                 self.assertIn(form.get('action'), (FREE_FORM, UPDATES_FORM))
@@ -147,8 +174,10 @@ class SiteChecks(unittest.TestCase):
         self.assertIn('https://asewav.com/sitemap.xml', (ROOT / 'robots.txt').read_text())
 
     def test_legacy_homepage_anchors(self):
-        ids = {a.get('id') for _, a in self.pages[''].nodes}
+        ids = {a.get('id') for _, a in self.pages['music-education'].nodes}
         self.assertTrue({'top', 'book', 'buy', 'listen', 'sample', 'about', 'faq', 'updates', 'tonnetz'} <= ids)
+        scripts = [a.get('src', '').split('?')[0] for a in self.pages[''].tags('script')]
+        self.assertIn('/practice-router.js', scripts)
 
 
 if __name__ == '__main__':

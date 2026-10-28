@@ -1,0 +1,86 @@
+:root { --signal: #242424; --practice-paper: #f1f1ef; --practice-silver: #dededb; --gold: #505050; }
+.practice-kicker { color: #383d38; font-size: 11px; font-weight: 550; line-height: 1.5; margin-bottom: 22px; }
+.practice-hero { position: relative; isolation: isolate; overflow: hidden; min-height: 680px; height: min(80svh, 820px); background: #e4e6e3; }
+.signal-art { position: absolute; z-index: -1; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 58%; }
+.practice-hero-copy { padding: 44px var(--page-x) 110px; position: relative; max-width: 1500px; }
+.practice-hero h1 { font-size: 110px; font-weight: 650; line-height: .98; max-width: 800px; text-wrap: initial; }
+.practice-hero h1 span { display: block; font-size: 44px; line-height: 1.08; font-weight: 450; margin-top: 18px; }
+.practice-hero-intro { color: #292c29; font-size: 15px; line-height: 1.6; margin-top: 20px; max-width: 390px; }
+.practice-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 24px; margin-top: 22px; }
+.practice-actions .button { border-radius: 0; }
+.hero-colophon { position: absolute; left: var(--page-x); right: var(--page-x); bottom: 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-size: 11px; color: #222; }
+.hero-colophon a { width: 40px; height: 40px; display: grid; place-items: center; border: 1px solid #484d48; border-radius: 50%; }
+.practice-intro { display: grid; grid-template-columns: .7fr 1.3fr; gap: 70px; background: #fff; border-bottom: 1px solid #dededb; }
+.practice-intro h2 { font-size: 46px; font-weight: 500; margin-bottom: 28px; }
+.practice-intro p:not(.practice-kicker) { max-width: 650px; color: #30352b; font-size: 17px; }
+.practice-intro .text-link { margin-top: 28px; }
+.practice-services { display: grid; grid-template-columns: .85fr 1.25fr; gap: 90px; background: var(--practice-paper); }
+.practice-section-heading h2 { font-size: 42px; font-weight: 500; }
+.practice-section-heading > p:last-child { font-size: 15px; max-width: 330px; margin-top: 24px; }
+.service-list details { border-top: 1px solid #c8cbc5; }
+.service-list details:last-child { border-bottom: 1px solid #c8cbc5; }
+.service-list summary { display: grid; grid-template-columns: 30px 1fr 24px; gap: 16px; align-items: start; list-style: none; cursor: pointer; padding: 24px 0; }
+.service-list summary::-webkit-details-marker { display: none; }
+.service-list summary h3 { font-size: 26px; font-weight: 500; line-height: 1.15; }
+.service-number { font-size: 11px; color: #666; padding-top: 5px; }
+.service-list summary > .icon { margin-top: 4px; transition: transform 160ms ease; }
+.service-list details[open] summary > .icon { transform: rotate(90deg); }
+.service-detail { padding: 0 24px 30px 46px; }
+.service-detail p { font-size: 14px; }
+.service-detail ul { display: flex; flex-wrap: wrap; gap: 7px 20px; list-style: none; padding: 0; margin: 18px 0 24px; color: #444b44; font-size: 12px; }
+.service-detail li::before { content: '+ '; color: var(--signal); }
+.migration-offer { margin-top: 28px; padding-top: 20px; border-top: 1px solid #d9dcd5; }
+.migration-offer .offer-heading { display: flex; flex-wrap: wrap; gap: 10px 28px; justify-content: space-between; color: #191919; font-weight: 600; margin-bottom: 8px; }
+.migration-offer .offer-price { font-variant-numeric: tabular-nums; }
+.migration-offer .text-link { margin-top: 14px; }
+.music-showcase { padding-top: 52px; border-top: 1px solid #dde0d8; }
+.music-showcase h2 { font-size: 38px; font-weight: 500; }
+.music-showcase .practice-kicker { margin-bottom: 14px; }
+.music-showcase .gallery-slide { height: 350px; }
+.music-showcase .gallery-cover > img { width: 240px; }
+#book .eyebrow, #inside .eyebrow, #guides .eyebrow, #listen .eyebrow, #sample .eyebrow { color: #4d574c; }
+.practice-contact { background: #181818; color: #fff; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+.practice-contact .practice-kicker { color: #c5c5c5; }
+.practice-contact h2 { font-size: 52px; font-weight: 450; }
+.practice-contact p { color: #d2d2d2; max-width: 480px; }
+.contact-email { display: inline-flex; align-items: center; gap: 16px; color: #ffffff; font-size: 26px; margin-top: 28px; text-decoration-thickness: 1px; overflow-wrap: anywhere; }
+.practice-contact .contact-note { font-size: 13px; margin-top: 24px; color: #bcbcbc; }
+.practice-kicker, #book .eyebrow, #inside .eyebrow, #guides .eyebrow, #listen .eyebrow, #sample .eyebrow { color: #505050; }
+.practice-intro p:not(.practice-kicker), .practice-hero-intro { color: #353535; }
+.practice-hero, .music-showcase { background: #e5e5e3; }
+#listen { background: #f0f0ef; }
+#listen .track-number { color: #555; }
+#book .product-art-spread, #book .product-item:nth-child(2) .product-art { background: #efefed; }
+.service-detail ul { color: #4b4b4b; }
+.hero-colophon a { border-color: #555; }
+.gallery-controls button:focus-visible, :focus-visible { outline-color: #555; }
+.site-footer .footer-brand img { width: 140px; height: 25px; object-fit: contain; filter: brightness(0); }
+@media (min-width: 1700px) { .practice-hero-copy { max-width: none; } .signal-art { object-position: center 65%; } }
+@media (min-width: 701px) and (max-width: 1000px) { .practice-services { gap: 40px; grid-template-columns: .9fr 1.1fr; } .practice-hero h1 { font-size: 86px; } .practice-hero h1 span { font-size: 38px; } }
+@media (max-width: 700px) {
+  .practice-hero { height: 690px; min-height: 0; }
+  .practice-hero-copy { padding: 30px 24px 80px; }
+  .practice-hero .practice-kicker { font-size: 10px; margin-bottom: 20px; }
+  .practice-hero h1 { font-size: 70px; }
+  .practice-hero h1 span { font-size: 34px; line-height: 1.08; margin-top: 14px; }
+  .practice-hero-intro { font-size: 14px; margin-top: 16px; }
+  .practice-actions { gap: 18px; margin-top: 18px; }
+  .practice-actions .button, .practice-actions .text-link { font-size: 12px; }
+  .signal-art { inset: auto; width: 900px; max-width: none; height: 600px; bottom: -18px; left: 50%; transform: translateX(-61%); object-fit: cover; }
+  .hero-colophon { left: 24px; right: 24px; bottom: 16px; font-size: 10px; }
+  .hero-colophon > span:last-child { display: none; }
+  .practice-intro, .practice-services, .practice-contact { grid-template-columns: 1fr; gap: 28px; }
+  .practice-intro h2 { font-size: 34px; }
+  .practice-intro p:not(.practice-kicker) { font-size: 16px; }
+  .practice-section-heading h2 { font-size: 36px; }
+  .service-list summary { gap: 10px; grid-template-columns: 24px 1fr 20px; }
+  .service-list summary h3 { font-size: 23px; }
+  .service-detail { padding-left: 34px; padding-right: 0; }
+  .music-showcase h2 { font-size: 30px; }
+  .music-showcase .gallery-slide { height: 280px; }
+  .music-showcase .gallery-cover > img { width: 200px; }
+  .practice-contact h2 { font-size: 40px; }
+  .contact-email { font-size: 22px; }
+}
+@media (max-width: 380px) { .practice-hero h1 { font-size: 58px; } .practice-hero h1 span { font-size: 29px; } .practice-hero { height: 630px; } .signal-art { width: 800px; height: 533px; } .practice-actions { gap: 12px; } .practice-actions .button { padding-inline: 14px; } }
+@media (prefers-reduced-motion: reduce) { .service-list summary > .icon { transition: none; } }
